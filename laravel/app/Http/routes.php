@@ -12,8 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Route::get('/api/v1/members/{id?}', 'Members@index');
+Route::post('/api/v1/members', 'Members@store');
+Route::post('/api/v1/members/{id}', 'Members@update');
+Route::delete('/api/v1/members/{id}', 'Members@destroy');
 
 /*
 |--------------------------------------------------------------------------
